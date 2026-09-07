@@ -1,0 +1,152 @@
+/* ==========================================================================
+   tokens.css — Design tokens for COSCUP 2027
+   --------------------------------------------------------------------------
+   Palette sampled directly from the COSCUP 2026 key visual
+   (https://coscup.org/2026/_ipx/s_3800x1664/banner.webp):
+   a flat, thick-outlined summer illustration — emerald frame, deep ocean
+   blue, lime island, coral / sunshine / grape accents on near-black lines.
+
+   Nothing in this file should reference a component. Only raw values and the
+   semantic aliases every other stylesheet is allowed to consume.
+   ========================================================================== */
+
+:root {
+  /* --- Brand ramp: emerald ------------------------------------------------ */
+  --c-emerald-50:  #e6faf0;
+  --c-emerald-100: #b9f2d6;
+  --c-emerald-300: #5cd99b;
+  --c-emerald-500: #29c172; /* key visual frame green */
+  --c-emerald-600: #16a35c;
+  --c-emerald-700: #0d7f45;
+
+  /* --- Ocean ramp: blue --------------------------------------------------- */
+  --c-ocean-50:  #e8f2fb;
+  --c-ocean-100: #c4d4e1; /* horizon haze */
+  --c-ocean-300: #4a90e0;
+  --c-ocean-400: #337ccf; /* mid sea */
+  --c-ocean-600: #006eb2; /* deep sea */
+  --c-ocean-800: #124c98;
+  --c-ocean-900: #0a3a6b;
+
+  /* --- Island greens ------------------------------------------------------ */
+  --c-island-500: #529f28;
+  --c-island-400: #5cb200;
+  --c-lime-400:   #a2e403;
+
+  /* --- Accents ------------------------------------------------------------ */
+  --c-coral-500:  #ff685b;
+  --c-coral-600:  #f0472c;
+  --c-sun-400:    #ffd23f;
+  --c-sun-500:    #f7b731;
+  --c-grape-500:  #6969d6;
+  --c-bubble-400: #ff7ab5;
+
+  /* --- Neutrals ----------------------------------------------------------- */
+  --c-ink:      #0b1220;
+  --c-ink-line: #000204; /* illustration outline black */
+  --c-slate-700: #33415c;
+  --c-slate-500: #64748b;
+  --c-slate-300: #cbd5e1;
+  --c-cloud:    #e5e6e3; /* cloud grey-white */
+  --c-paper:    #f7fbf9;
+  --c-white:    #ffffff;
+
+  /* --- Semantic aliases --------------------------------------------------- */
+  --color-brand:            var(--c-emerald-500);
+  --color-brand-strong:     var(--c-emerald-600);
+  --color-brand-deep:       var(--c-emerald-700);
+  --color-accent:           var(--c-coral-500);
+  --color-highlight:        var(--c-sun-400);
+
+  --color-bg:               var(--c-paper);
+  --color-bg-alt:           var(--c-white);
+  --color-bg-deep:          var(--c-ocean-900);
+  --color-surface:          var(--c-white);
+
+  --color-text:             var(--c-ink);
+  --color-text-muted:       var(--c-slate-500);
+  --color-text-on-dark:     var(--c-white);
+  --color-text-on-dark-mut: rgba(255, 255, 255, .78);
+
+  --color-border:           var(--c-ink-line);
+  --color-border-soft:      var(--c-slate-300);
+  --color-focus:            var(--c-grape-500);
+
+  /* --- Typography --------------------------------------------------------- */
+  --font-display: "Fredoka", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --font-body: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI",
+               "PingFang TC", "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Fluid type scale — clamp(min, preferred, max) */
+  --fs-xs:   0.8125rem;
+  --fs-sm:   0.9125rem;
+  --fs-base: 1rem;
+  --fs-md:   clamp(1.0625rem, 0.2vw + 1rem, 1.15rem);
+  --fs-lg:   clamp(1.2rem, 0.5vw + 1.05rem, 1.4rem);
+  --fs-xl:   clamp(1.5rem, 1vw + 1.2rem, 2rem);
+  --fs-2xl:  clamp(1.9rem, 2vw + 1.3rem, 2.9rem);
+  --fs-3xl:  clamp(2.6rem, 5vw + 1rem, 5.5rem);
+  --fs-hero: clamp(3.4rem, 11vw, 10rem);
+
+  --lh-tight: 1.12;
+  --lh-snug:  1.35;
+  --lh-body:  1.78;
+
+  /* --- Spacing scale (4px base) ------------------------------------------- */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.5rem;
+  --sp-6:  2rem;
+  --sp-7:  2.5rem;
+  --sp-8:  3rem;
+  --sp-9:  4rem;
+  --sp-10: 5.5rem;
+  --sp-11: 7rem;
+
+  --section-pad: clamp(3.5rem, 8vw, 7rem);
+
+  /* --- Layout ------------------------------------------------------------- */
+  --wrap-max: 1180px;
+  --wrap-pad: clamp(1.15rem, 4vw, 2.5rem);
+  --header-h: 68px;
+
+  /* --- Shape -------------------------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* The key visual is built on heavy uniform outlines — keep that. */
+  --line-w: 3px;
+  --line-w-thin: 2px;
+
+  /* --- Elevation: hard "sticker" shadows, no blur -------------------------- */
+  --shadow-sticker:    4px 5px 0 var(--c-ink-line);
+  --shadow-sticker-sm: 3px 3px 0 var(--c-ink-line);
+  --shadow-sticker-lg: 7px 8px 0 var(--c-ink-line);
+  --shadow-soft: 0 12px 34px -18px rgba(11, 18, 32, .45);
+
+  /* --- Motion ------------------------------------------------------------- */
+  --ease-out: cubic-bezier(.22, .8, .3, 1);
+  --ease-bounce: cubic-bezier(.34, 1.56, .64, 1);
+  --dur-fast: 140ms;
+  --dur-base: 260ms;
+  --dur-slow: 620ms;
+
+  --z-base: 1;
+  --z-sticky: 60;
+  --z-header: 80;
+  --z-overlay: 90;
+}
+
+/* --------------------------------------------------------------------------
+   Scheme note
+   The 2026 key visual is a committed bright-summer illustration; the page
+   deliberately ships a single light theme so the artwork never fights the
+   surface behind it. Deep-sea navy is used as a *section* background
+   (--color-bg-deep) rather than as an alternate colour scheme.
+   -------------------------------------------------------------------------- */

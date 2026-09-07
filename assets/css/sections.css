@@ -1,0 +1,312 @@
+/* ==========================================================================
+   sections.css — one block per page section
+   Depends on: tokens.css, base.css, layout.css, components.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero
+   Structure mirrors the 2026 key visual: a sky at the top holding the
+   wordmark, a deep blue sea below it, and the illustrated island sitting on
+   the horizon. Text always lives in the sky band so it never fights the art.
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(var(--sp-8), 9vw, var(--sp-11)) 0;
+  background:
+    radial-gradient(120% 80% at 50% 0%, #d8f2ff 0%, #a8def9 38%, #62b6ef 62%, transparent 100%),
+    linear-gradient(180deg, #7cc8f2 0%, #3d8ed8 42%, var(--c-ocean-600) 100%);
+  border-bottom: var(--line-w) solid var(--color-border);
+}
+
+/* The emerald frame that surrounds the 2026 artwork. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border: clamp(8px, 1.4vw, 18px) solid var(--c-emerald-500);
+  border-block-start: 0;
+}
+
+.hero__scene {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__art {
+  width: 100%;
+  height: auto;
+  will-change: transform;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding-bottom: clamp(14rem, 34vw, 26rem);
+}
+
+.hero__eyebrow {
+  padding: var(--sp-1) var(--sp-5);
+  border: var(--line-w-thin) solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--c-sun-400);
+  color: var(--c-ink);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sticker-sm);
+}
+
+.hero__title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(var(--sp-2), 1.6vw, var(--sp-5));
+  margin-top: var(--sp-5);
+  font-size: var(--fs-hero);
+  letter-spacing: -0.035em;
+  line-height: .92;
+}
+
+.hero__title-main {
+  color: var(--c-emerald-500);
+  /* Layered hard strokes reproduce the outlined-sticker lettering. */
+  -webkit-text-stroke: clamp(3px, 0.55vw, 7px) var(--c-ink-line);
+  paint-order: stroke fill;
+  text-shadow: clamp(4px, 0.7vw, 9px) clamp(4px, 0.7vw, 9px) 0 var(--c-ink-line);
+}
+
+.hero__title-year {
+  color: var(--c-white);
+  font-size: .52em;
+  -webkit-text-stroke: clamp(2px, 0.35vw, 4px) var(--c-ink-line);
+  paint-order: stroke fill;
+  text-shadow: clamp(3px, 0.45vw, 5px) clamp(3px, 0.45vw, 5px) 0 var(--c-coral-500);
+  transform: rotate(-4deg);
+}
+
+.hero__tagline {
+  margin-top: var(--sp-5);
+  max-width: 34ch;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  color: var(--c-ink);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .65);
+}
+
+.hero__lede {
+  margin-top: var(--sp-2);
+  max-width: 44ch;
+  font-size: var(--fs-base);
+  color: #103a5e;
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+}
+
+.hero__note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  max-width: 56ch;
+  margin-top: var(--sp-6);
+  padding: var(--sp-3) var(--sp-5);
+  border: var(--line-w-thin) dashed rgba(0, 2, 4, .45);
+  border-radius: var(--radius-lg);
+  background-color: rgba(255, 255, 255, .68);
+  font-size: var(--fs-sm);
+  color: #0f3557;
+}
+
+/* Wave lip that hands the hero off to the next section. */
+.hero__wave {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: -1px;
+  z-index: 2;
+  height: clamp(28px, 4vw, 54px);
+  background-color: var(--c-emerald-500);
+  border-top: var(--line-w) solid var(--color-border);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0 24c60 0 60 18 120 18s60-18 120-18 60 18 120 18 60-18 120-18 60 18 120 18 60-18 120-18 60 18 120 18 60-18 120-18 60 18 120 18 60-18 120-18v36H0z'/%3E%3C/svg%3E");
+  mask-size: 1200px 100%;
+  mask-repeat: repeat-x;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0 24c60 0 60 18 120 18s60-18 120-18 60 18 120 18 60-18 120-18 60 18 120 18 60-18 120-18 60 18 120 18 60-18 120-18 60 18 120 18 60-18 120-18v36H0z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 1200px 100%;
+  -webkit-mask-repeat: repeat-x;
+}
+
+@media (max-width: 620px) {
+  .hero__inner { padding-bottom: clamp(9rem, 52vw, 15rem); }
+  .hero__title { gap: var(--sp-2); }
+}
+
+/* --------------------------------------------------------------------------
+   Stats
+   -------------------------------------------------------------------------- */
+.stats {
+  background-color: var(--c-emerald-500);
+  border-bottom: var(--line-w) solid var(--color-border);
+  padding-block: var(--sp-7);
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--sp-5);
+  text-align: center;
+}
+
+.stat + .stat { border-inline-start: var(--line-w-thin) dashed rgba(0, 2, 4, .28); }
+
+.stat__value {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--c-ink);
+}
+
+.stat__unit { font-size: .62em; }
+
+.stat__label {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-sm);
+  color: #0a3d24;
+}
+
+@media (max-width: 700px) {
+  .stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6) var(--sp-4); }
+  .stat:nth-child(odd) { border-inline-start: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Program
+   -------------------------------------------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: var(--sp-5);
+}
+
+/* --------------------------------------------------------------------------
+   Support / Donate
+   -------------------------------------------------------------------------- */
+.section--support {
+  background:
+    linear-gradient(180deg, var(--c-ocean-600) 0%, var(--c-ocean-900) 100%);
+  border-block: var(--line-w) solid var(--color-border);
+  overflow: hidden;
+}
+
+.support {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr);
+  align-items: center;
+  gap: var(--sp-8);
+}
+
+.support__lede {
+  margin-top: var(--sp-5);
+  max-width: 58ch;
+  font-size: var(--fs-md);
+  color: var(--color-text-on-dark-mut);
+}
+
+.support__list {
+  display: grid;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+  font-size: var(--fs-sm);
+  color: var(--color-text-on-dark);
+}
+
+.support__list li {
+  position: relative;
+  padding-inline-start: var(--sp-6);
+}
+
+.support__list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: .62em;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--c-ink-line);
+  border-radius: 3px;
+  background-color: var(--c-sun-400);
+  transform: rotate(-12deg);
+}
+
+.support__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: var(--sp-7);
+}
+
+.support__art { justify-self: center; }
+
+.support__art img {
+  width: min(320px, 100%);
+  height: auto;
+  animation: float-bob 6s var(--ease-out) infinite;
+  will-change: transform;
+}
+
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%      { transform: translateY(-14px) rotate(3deg); }
+}
+
+@media (max-width: 860px) {
+  .support { grid-template-columns: 1fr; }
+  .support__art { order: -1; }
+  .support__art img { width: min(220px, 60%); }
+}
+
+/* --------------------------------------------------------------------------
+   News
+   -------------------------------------------------------------------------- */
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+  gap: var(--sp-5);
+}
+
+/* --------------------------------------------------------------------------
+   Contact
+   -------------------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: var(--sp-4);
+}
