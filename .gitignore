@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Dependencies / build output (none today — kept for when tooling arrives)
+node_modules/
+dist/
