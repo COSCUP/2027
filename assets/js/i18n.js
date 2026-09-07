@@ -43,6 +43,8 @@ const EN = Object.freeze({
   'cta.donateHint': 'Support the conference',
   'cta.donateNow': 'Donate to COSCUP',
   'cta.subscribe': 'Subscribe',
+  'cta.volunteer': 'Volunteers wanted',
+  'cta.volunteerHint': 'See the open teams',
   'cta.corporate': 'Corporate sponsorship',
 
   'hero.eyebrow': 'Save the date',

@@ -54,6 +54,11 @@
 .btn--sun { background-color: var(--c-sun-400); color: var(--c-ink); }
 .btn--sun:hover { background-color: #ffdf72; }
 
+/* Reserved for the one call that is open right now, so it reads as a peer of
+   the primary action rather than a second-tier link. */
+.btn--coral { background-color: var(--c-coral-500); color: var(--c-white); }
+.btn--coral:hover { background-color: #ff8478; }
+
 .btn--ghost { background-color: var(--c-white); }
 .btn--ghost:hover { background-color: var(--c-ocean-50); }
 
