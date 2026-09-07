@@ -143,6 +143,7 @@
       <ul class="site-nav__list">
         <li><a class="site-nav__link" href="#about" data-i18n="nav.about">關於 COSCUP</a></li>
         <li><a class="site-nav__link" href="#program" data-i18n="nav.program">活動內容</a></li>
+        <li><a class="site-nav__link" href="#volunteer" data-i18n="nav.volunteer">志工招募</a></li>
         <li><a class="site-nav__link" href="#support" data-i18n="nav.support">支持我們</a></li>
         <li><a class="site-nav__link" href="#news" data-i18n="nav.news">最新消息</a></li>
         <li><a class="site-nav__link" href="#contact" data-i18n="nav.contact">聯絡我們</a></li>
@@ -208,6 +209,10 @@
            target="_blank" rel="noopener noreferrer">
           <span data-i18n="cta.donate">個人贊助</span>
           <small class="btn__hint" data-i18n="cta.donateHint">支持社群年會</small>
+        </a>
+        <a class="btn btn--coral btn--lg" href="#volunteer">
+          <span data-i18n="cta.volunteer">加入志工團隊</span>
+          <small class="btn__hint" data-i18n="cta.volunteerHint">招募開跑中</small>
         </a>
         <a class="btn btn--ghost btn--lg" href="https://secretary.coscup.org/subscribe/coscup"
            target="_blank" rel="noopener noreferrer" data-i18n="cta.subscribe">訂閱電子報</a>
@@ -306,6 +311,64 @@
           <p class="card__body" data-i18n="program.fringe.body">前夜派對、社群小聚與各式周邊活動，讓交流不只發生在議程時間裡。</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Volunteer recruitment
+       Team cards are rendered by assets/js/ui.js from VOLUNTEER_TEAMS in
+       assets/js/config.js — flip a team's status there when its form opens.
+       ======================================================================== -->
+  <section class="section section--volunteer" id="volunteer">
+    <div class="wrap">
+      <header class="section__head" data-js="reveal">
+        <p class="section__eyebrow" data-i18n="volunteer.eyebrow">Volunteer</p>
+        <h2 class="section__title">
+          <span data-i18n="volunteer.title">志工招募中</span>
+          <span class="badge" data-i18n="volunteer.badge">已開跑</span>
+        </h2>
+        <p class="section__lede" data-i18n="volunteer.lede">每一場精彩的 COSCUP，背後都是志工夥伴的熱情投入。為了讓 2027 年的籌備更加充分，我們提早啟動志工招募 — 這是一個能讓你的貢獻與才華被數千位開源愛好者看見的舞台。</p>
+      </header>
+
+      <ul class="team-grid" data-js="team-list">
+        <!-- Replaced by ui.js. This fallback is what a visitor without
+             JavaScript sees, and it still gets them to the full document. -->
+        <li class="team-card team-card--fallback">
+          <p class="team-card__desc" data-i18n="volunteer.fallback">共有十個組別開放招募，各組別的報名狀態與說明請見完整招募文件。</p>
+          <p class="team-card__actions">
+            <a class="team-card__action" href="https://s.coscup.org/27volunteer"
+               target="_blank" rel="noopener noreferrer" data-i18n="cta.volunteerDoc">查看完整招募說明</a>
+          </p>
+        </li>
+      </ul>
+
+      <div class="apply" data-js="reveal">
+        <div class="apply__col">
+          <h3 class="apply__title" data-i18n="volunteer.applyTitle">申請信必備內容</h3>
+          <!-- The address is kept outside the translated span: i18n swaps
+               textContent, which would otherwise strip the link. -->
+          <p class="apply__note">
+            <span data-i18n="volunteer.applyNote">若你心儀的組別尚未開放報名表單，請依照下列項目準備資料，寄到</span>
+            <a class="apply__mail" href="mailto:2026teamleaders@coscup.org">2026teamleaders@coscup.org</a>
+          </p>
+        </div>
+
+        <ol class="apply__list">
+          <li data-i18n="volunteer.apply1">你的稱呼／暱稱</li>
+          <li data-i18n="volunteer.apply2">欲申請的組別</li>
+          <li data-i18n="volunteer.apply3">過去參加 COSCUP 的次數與身分（志工／與會者／講者）</li>
+          <li data-i18n="volunteer.apply4">是否有籌辦其他活動或社群的經驗？當時擔任什麼角色？</li>
+          <li data-i18n="volunteer.apply5">擅長或熟悉的工具與技能（設計、攝影、社群經營、外文溝通、程式開發⋯⋯）</li>
+          <li data-i18n="volunteer.apply6">介紹一下自己，讓我們更認識你</li>
+          <li data-i18n="volunteer.apply7">每週預計可投入的時間（約幾小時）</li>
+          <li data-i18n="volunteer.apply8">聯絡 Email</li>
+        </ol>
+      </div>
+
+      <p class="volunteer__more" data-js="reveal">
+        <a class="btn btn--coral" href="https://s.coscup.org/27volunteer"
+           target="_blank" rel="noopener noreferrer" data-i18n="cta.volunteerDoc">查看完整招募說明</a>
+      </p>
     </div>
   </section>
 

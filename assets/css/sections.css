@@ -217,6 +217,91 @@
 }
 
 /* --------------------------------------------------------------------------
+   Volunteer
+   -------------------------------------------------------------------------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  gap: var(--sp-4);
+}
+
+.apply {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: var(--sp-6) var(--sp-8);
+  margin-top: var(--sp-8);
+  padding: var(--sp-7);
+  border: var(--line-w) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--c-ocean-50);
+  box-shadow: var(--shadow-sticker);
+}
+
+.apply__title {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-3);
+}
+
+.apply__note {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.apply__mail {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--c-ocean-600);
+  border-bottom: 2px solid var(--c-ocean-300);
+  word-break: break-all;
+}
+
+.apply__mail:hover { border-bottom-color: var(--c-ocean-600); }
+
+.apply__list {
+  display: grid;
+  gap: var(--sp-3);
+  counter-reset: apply;
+  font-size: var(--fs-sm);
+  list-style: none;
+}
+
+.apply__list li {
+  position: relative;
+  padding-inline-start: var(--sp-8);
+  counter-increment: apply;
+}
+
+.apply__list li::before {
+  content: counter(apply);
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: .1em;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: var(--line-w-thin) solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--c-sun-400);
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.volunteer__more {
+  margin-top: var(--sp-7);
+  text-align: center;
+}
+
+@media (max-width: 780px) {
+  .apply {
+    grid-template-columns: 1fr;
+    padding: var(--sp-5);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Support / Donate
    -------------------------------------------------------------------------- */
 .section--support {

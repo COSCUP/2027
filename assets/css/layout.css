@@ -17,10 +17,11 @@
   padding-block: var(--section-pad);
 }
 
-.section--about   { background-color: var(--color-bg-alt); }
-.section--program { background-color: var(--color-bg); }
-.section--news    { background-color: var(--color-bg-alt); }
-.section--contact { background-color: var(--color-bg); }
+.section--about     { background-color: var(--color-bg-alt); }
+.section--program   { background-color: var(--color-bg); }
+.section--volunteer { background-color: var(--color-bg-alt); }
+.section--news      { background-color: var(--color-bg-alt); }
+.section--contact   { background-color: var(--color-bg); }
 
 .section__head {
   max-width: 62ch;
@@ -49,6 +50,10 @@
 }
 
 .section__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-4);
   font-size: var(--fs-2xl);
   color: var(--color-text);
 }
