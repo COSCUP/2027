@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320"
+     role="img" aria-label="Donation sticker">
+  <title>COSCUP donation sticker</title>
+  <g transform="translate(160 160)">
+    <!-- sticker body -->
+    <circle r="126" fill="#29c172" stroke="#000204" stroke-width="9"/>
+    <circle r="126" fill="none" stroke="#ffffff" stroke-width="5" stroke-dasharray="14 12" opacity=".65"/>
+    <circle r="96" fill="#ffffff" stroke="#000204" stroke-width="8"/>
+
+    <!-- heart -->
+    <path d="M0 46 C -52 12, -62 -22, -44 -42 C -28 -60, -6 -50, 0 -32
+             C 6 -50, 28 -60, 44 -42 C 62 -22, 52 12, 0 46 Z"
+          fill="#ff685b" stroke="#000204" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M-24 -30 c-8 6-10 18-4 28" fill="none" stroke="#ffffff"
+          stroke-width="7" stroke-linecap="round" opacity=".8"/>
+
+    <!-- coin slipping in -->
+    <g transform="translate(66 -62) rotate(18)">
+      <circle r="26" fill="#ffd23f" stroke="#000204" stroke-width="7"/>
+      <circle r="14" fill="none" stroke="#000204" stroke-width="5"/>
+    </g>
+
+    <!-- sparkles -->
+    <g fill="#ffd23f" stroke="#000204" stroke-width="4" stroke-linejoin="round">
+      <path d="M-92 -66 C -89 -52, -84 -48, -70 -45 C -84 -42, -89 -38, -92 -24
+               C -95 -38, -100 -42, -114 -45 C -100 -48, -95 -52, -92 -66 Z"/>
+    </g>
+    <g fill="#ffffff" stroke="#000204" stroke-width="3.5" stroke-linejoin="round">
+      <path d="M-70 78 C -68 88, -65 91, -55 93 C -65 95, -68 98, -70 108
+               C -72 98, -75 95, -85 93 C -75 91, -72 88, -70 78 Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"
+     role="img" aria-label="COSCUP 2027">
+  <title>COSCUP 2027</title>
+  <rect width="64" height="64" rx="14" fill="#29c172"/>
+  <path d="M0 34 C 12 28, 20 40, 32 34 C 44 28, 54 38, 64 32 L64 64 L0 64 Z" fill="#006eb2"/>
+  <path d="M13 47 C 17 39, 30 34, 41 36 C 49 38, 55 42, 52 47 C 46 53, 19 53, 13 47 Z"
+        fill="#a2e403" stroke="#000204" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M46 10 C 47.6 17, 49 18.4, 56 20 C 49 21.6, 47.6 23, 46 30
+           C 44.4 23, 43 21.6, 36 20 C 43 18.4, 44.4 17, 46 10 Z" fill="#ffd23f"/>
+</svg>

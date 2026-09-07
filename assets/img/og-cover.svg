@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1200 630" width="1200" height="630">
+  <title>COSCUP 2027 — social share cover</title>
+  <defs>
+    <linearGradient id="ogSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#d8f2ff"/>
+      <stop offset="0.42" stop-color="#8fd0f5"/>
+      <stop offset="1"    stop-color="#3d8ed8"/>
+    </linearGradient>
+    <clipPath id="ogClip"><rect width="1200" height="630"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#ogClip)">
+    <rect width="1200" height="630" fill="url(#ogSky)"/>
+    <image xlink:href="hero-scene.svg" x="-120" y="96" width="1440" height="684"
+           preserveAspectRatio="xMidYMid slice"/>
+  </g>
+
+  <!-- emerald frame, matching the 2026 key visual -->
+  <rect x="9" y="9" width="1182" height="612" fill="none" stroke="#29c172" stroke-width="18"/>
+
+  <g font-family="Arial Rounded MT Bold, Avenir Heavy, Helvetica, sans-serif" text-anchor="middle">
+    <!-- eyebrow -->
+    <g transform="translate(600 92)">
+      <rect x="-132" y="-25" width="264" height="46" rx="23"
+            fill="#ffd23f" stroke="#000204" stroke-width="4"/>
+      <text y="8" font-size="22" fill="#0b1220" letter-spacing="4">SAVE THE DATE</text>
+    </g>
+
+    <!-- wordmark -->
+    <text x="600" y="240" font-size="132" fill="#29c172"
+          stroke="#000204" stroke-width="14" paint-order="stroke" letter-spacing="-3">COSCUP</text>
+    <text x="600" y="330" font-size="86" fill="#ffffff"
+          stroke="#000204" stroke-width="10" paint-order="stroke" letter-spacing="4">2027</text>
+
+    <!-- tagline -->
+    <text x="600" y="376" font-size="25" fill="#0b2740"
+          font-family="Helvetica, Arial, sans-serif">Conference for Open Source Coders, Users &amp; Promoters</text>
+  </g>
+
+  <!-- footer strip -->
+  <g transform="translate(0 564)">
+    <rect width="1200" height="66" fill="#0a3a6b" opacity=".92"/>
+    <g font-family="Helvetica, Arial, sans-serif" fill="#ffffff">
+      <text x="46" y="42" font-size="26" font-weight="bold">August 2027 · Taiwan</text>
+      <text x="1154" y="42" font-size="23" text-anchor="end" fill="#5cd99b">coscup.org</text>
+    </g>
+  </g>
+</svg>
