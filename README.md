@@ -12,9 +12,6 @@ coral, sunshine and grape accents. The information architecture follows the
 > **Call for Proposals is not open yet.** The primary call to action on this
 > page is therefore **Donate**, not CfP. When the CfP opens, see
 > [Opening the Call for Proposals](#opening-the-call-for-proposals).
->
-> **Volunteer recruitment *is* open.** The `#volunteer` section is generated
-> from data — see [Volunteer teams](#volunteer-teams).
 
 ---
 
@@ -101,15 +98,6 @@ To add or change a translated string:
 A key missing from `EN` falls back to the on-screen text rather than blanking
 the element, so a forgotten translation degrades quietly.
 
-Because switching swaps `textContent`, a translated element must not contain
-markup you want to keep. Where a link sits inside a sentence, wrap only the
-words in `data-i18n` and leave the `<a>` as a sibling — see `.apply__note` in
-`index.html`.
-
-**One dataset is bilingual in place:** `VOLUNTEER_TEAMS` in `config.js` carries
-`{ zh, en }` pairs, because those cards are rendered by `ui.js` and re-render
-on the `coscup:langchange` event rather than going through `data-i18n`.
-
 The visitor's choice is stored in `localStorage` under
 `coscup2027:lang`; first-time visitors are matched against `navigator.languages`.
 
@@ -139,38 +127,6 @@ the `<head>` metadata is in `index.html`. When the dates are confirmed, update:
 3. `Event.startDate` and `Event.location` in the JSON-LD block
 4. `assets/img/og-cover.svg`, then re-render:
    `cd assets/img && rsvg-convert -w 1200 -h 630 og-cover.svg -o og-cover.png`
-
-### Volunteer teams
-
-The `#volunteer` section is rendered by `initVolunteerTeams()` in `ui.js` from
-`VOLUNTEER_TEAMS` in `config.js`. Source of truth for the content:
-<https://s.coscup.org/27volunteer>.
-
-Each team has a `status`:
-
-| `status`  | Meaning                     | Card shows                          |
-| --------- | --------------------------- | ----------------------------------- |
-| `open`    | a sign-up form is live      | green badge, link to `formUrl`      |
-| `email`   | apply by writing to a inbox | yellow badge, `mailto:` that `email`|
-| `pending` | not accepting yet           | grey badge, `mailto:` team leaders  |
-
-**When a team's form opens**, change two lines in `config.js`:
-
-```js
-{ id: 'design', name: { zh: '設計組', en: 'Design Team' },
-  status: 'open',                                   // was 'pending'
-  formUrl: 'https://s.coscup.org/27volunteerdesign' // new
-},
-```
-
-Nothing else needs touching — the grid, badge and link all follow.
-
-Teams without a form fall back to `CONTACTS.teamLeaders`, which is spelled
-`2026teamleaders@coscup.org`. That is the address the official recruitment
-document publishes; the `2026` is intentional, not a typo to correct here.
-
-The `<ul data-js="team-list">` in `index.html` ships a fallback card pointing at
-the full recruitment document, which is what a visitor without JavaScript sees.
 
 ### Adding last year's site to the footer archive
 

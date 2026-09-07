@@ -8,17 +8,7 @@
  * @module ui
  */
 
-import {
-  ARCHIVE_YEARS,
-  CONTACTS,
-  NAV_SECTIONS,
-  SITE,
-  TEAM_INFO_LABEL,
-  TEAM_STATUS_LABELS,
-  VOLUNTEER_TEAMS,
-  archiveUrl,
-} from './config.js';
-import { getLang } from './i18n.js';
+import { ARCHIVE_YEARS, NAV_SECTIONS, SITE, archiveUrl } from './config.js';
 
 const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -214,99 +204,6 @@ export function initParallax() {
 
   update();
   window.addEventListener('scroll', update, { passive: true });
-}
-
-/* -------------------------------------------------------------------------
-   Volunteer teams
-   ------------------------------------------------------------------------- */
-
-/**
- * Builds one team card.
- * @param {import('./config.js').VolunteerTeam} team
- * @param {'zh' | 'en'} lang
- * @returns {HTMLLIElement}
- */
-function buildTeamCard(team, lang) {
-  const labels = TEAM_STATUS_LABELS[team.status];
-
-  const item = document.createElement('li');
-  item.className = `team-card team-card--${team.status}`;
-
-  const head = document.createElement('div');
-  head.className = 'team-card__head';
-
-  const name = document.createElement('h3');
-  name.className = 'team-card__name';
-  // Both names are always shown: the Chinese name is what organisers use in
-  // conversation, the English one is what newcomers recognise.
-  name.append(team.name[lang]);
-  const alt = document.createElement('span');
-  alt.className = 'team-card__name-alt';
-  alt.textContent = team.name[lang === 'zh' ? 'en' : 'zh'];
-  name.append(alt);
-
-  const badge = document.createElement('span');
-  badge.className = `team-badge team-badge--${team.status}`;
-  badge.textContent = labels.badge[lang];
-
-  head.append(name, badge);
-  item.append(head);
-
-  if (team.desc) {
-    const desc = document.createElement('p');
-    desc.className = 'team-card__desc';
-    desc.textContent = team.desc[lang];
-    item.append(desc);
-  }
-
-  const actions = document.createElement('p');
-  actions.className = 'team-card__actions';
-
-  const action = document.createElement('a');
-  action.className = 'team-card__action';
-  if (team.status === 'open' && team.formUrl) {
-    action.href = team.formUrl;
-    action.target = '_blank';
-    action.rel = 'noopener noreferrer';
-  } else {
-    // Teams without a form — and every team still pending — are reached by
-    // email, falling back to the shared team-leaders inbox.
-    action.href = `mailto:${team.email ?? CONTACTS.teamLeaders}`;
-  }
-  action.textContent = labels.action[lang];
-  actions.append(action);
-
-  if (team.infoUrl) {
-    const info = document.createElement('a');
-    info.className = 'team-card__info';
-    info.href = team.infoUrl;
-    info.target = '_blank';
-    info.rel = 'noopener noreferrer';
-    info.textContent = TEAM_INFO_LABEL[lang];
-    actions.append(info);
-  }
-
-  item.append(actions);
-  return item;
-}
-
-/**
- * Renders the volunteer team cards from `config.js` and re-renders them when
- * the language changes, since this content is not driven by `data-i18n`.
- */
-export function initVolunteerTeams() {
-  const list = document.querySelector('[data-js="team-list"]');
-  if (!list) return;
-
-  const render = () => {
-    const lang = getLang();
-    const fragment = document.createDocumentFragment();
-    for (const team of VOLUNTEER_TEAMS) fragment.append(buildTeamCard(team, lang));
-    list.replaceChildren(fragment);
-  };
-
-  render();
-  document.addEventListener('coscup:langchange', render);
 }
 
 /* -------------------------------------------------------------------------

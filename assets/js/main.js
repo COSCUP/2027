@@ -16,15 +16,13 @@ import {
   initParallax,
   initReveal,
   initScrollSpy,
-  initVolunteerTeams,
   initYearList,
 } from './ui.js';
 
 /** Everything that should run once the DOM is ready, in start-up order. */
 const bootSequence = [
-  initYearList,        // build DOM first, so later features can observe it
-  initVolunteerTeams,  // ditto — renders from config, re-renders on language change
-  initI18n,            // snapshot + translate before anything is measured
+  initYearList,   // build DOM first, so later features can observe it
+  initI18n,       // snapshot + translate before anything is measured
   initHeaderState,
   initMobileNav,
   initScrollSpy,

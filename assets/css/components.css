@@ -54,9 +54,6 @@
 .btn--sun { background-color: var(--c-sun-400); color: var(--c-ink); }
 .btn--sun:hover { background-color: #ffdf72; }
 
-.btn--coral { background-color: var(--c-coral-500); color: var(--c-white); }
-.btn--coral:hover { background-color: #ff8478; }
-
 .btn--ghost { background-color: var(--c-white); }
 .btn--ghost:hover { background-color: var(--c-ocean-50); }
 
@@ -205,7 +202,18 @@
   background-color: var(--c-emerald-50);
 }
 
-.link-card__title { font-size: var(--fs-lg); margin-bottom: var(--sp-2); }
+.link-card__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-2);
+}
+
+/* Highlights the one call that is actually open right now. */
+.link-card--featured { background-color: var(--c-emerald-50); }
+.link-card--featured:hover { background-color: var(--c-emerald-100); }
 
 .link-card__body {
   font-size: var(--fs-sm);
@@ -333,110 +341,6 @@
 .to-top.is-visible { opacity: 1; transform: translateY(0); }
 .to-top:hover { transform: translateY(-3px); box-shadow: var(--shadow-sticker); }
 .to-top svg { width: 22px; height: 22px; }
-
-/* --- Volunteer team card -------------------------------------------------- */
-.team-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
-  padding: var(--sp-5);
-  border: var(--line-w-thin) solid var(--color-border);
-  border-radius: var(--radius-md);
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow-sticker-sm);
-  transition: transform var(--dur-base) var(--ease-out),
-              box-shadow var(--dur-base) var(--ease-out);
-}
-
-.team-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-sticker);
-}
-
-/* Teams that are actually recruiting get the loud treatment. */
-.team-card--open {
-  border-width: var(--line-w);
-  background-color: var(--c-emerald-50);
-}
-
-/* Apply-by-email teams get the warm tint that matches their badge. */
-.team-card--email { background-color: #fff8e8; }
-
-.team-card--pending { background-color: var(--c-paper); }
-
-.team-card__head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--sp-3);
-}
-
-.team-card__name {
-  font-size: var(--fs-base);
-  line-height: 1.4;
-}
-
-.team-card__name-alt {
-  display: block;
-  font-family: var(--font-body);
-  font-size: var(--fs-xs);
-  font-weight: 400;
-  color: var(--color-text-muted);
-}
-
-.team-card__desc {
-  font-size: var(--fs-sm);
-  color: var(--color-text-muted);
-}
-
-.team-card__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--sp-2) var(--sp-4);
-  margin-top: auto;
-  padding-top: var(--sp-1);
-  font-size: var(--fs-sm);
-}
-
-.team-card__action {
-  font-weight: 700;
-  color: var(--c-emerald-700);
-  border-bottom: 2px solid var(--c-emerald-300);
-  transition: border-color var(--dur-fast) var(--ease-out),
-              color var(--dur-fast) var(--ease-out);
-}
-
-.team-card__action:hover {
-  color: var(--color-brand-deep);
-  border-bottom-color: var(--c-emerald-700);
-}
-
-.team-card--pending .team-card__action { color: var(--color-text-muted); border-bottom-color: var(--color-border-soft); }
-.team-card--pending .team-card__action:hover { color: var(--c-ink); border-bottom-color: var(--c-ink); }
-
-.team-card__info {
-  color: var(--c-ocean-600);
-  border-bottom: 1px dashed currentColor;
-}
-
-.team-card--fallback { grid-column: 1 / -1; }
-
-/* --- Team status badge ---------------------------------------------------- */
-.team-badge {
-  flex: 0 0 auto;
-  padding: 1px var(--sp-3);
-  border: var(--line-w-thin) solid var(--color-border);
-  border-radius: var(--radius-pill);
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  line-height: 1.7;
-  white-space: nowrap;
-}
-
-.team-badge--open    { background-color: var(--c-emerald-500); color: var(--c-ink); }
-.team-badge--email   { background-color: var(--c-sun-400); color: var(--c-ink); }
-.team-badge--pending { background-color: var(--c-cloud); color: var(--c-slate-700); }
 
 /* --- Prose ---------------------------------------------------------------- */
 .prose {
